@@ -7,18 +7,11 @@ public class Main {
 
         public static void main(String[] args) {
             ArrayList<String> list = new ArrayList<>();
-            String choice = null;
+            String choice = "";
             Scanner input = new Scanner(System.in);
-            System.out.println("Please Choose an option");
-            System.out.println("");
-            System.out.println("(1) Add a task ");
-            System.out.println("(2) Remove a task ");
-            System.out.println("(3) Update a task ");
-            System.out.println("(4) List all tasks ");
-            System.out.println("(0) Exit ");
-            choice = input.nextLine();
-            do {
 
+
+            while (!(choice.equals("0"))) {
                 System.out.println("Please Choose an option");
                 System.out.println("");
                 System.out.println("(1) Add a task ");
@@ -27,41 +20,52 @@ public class Main {
                 System.out.println("(4) List all tasks ");
                 System.out.println("(0) Exit ");
 
+                System.out.println("Please Choose an option");
+                choice = input.nextLine();
+
                 switch (choice) {
 
                     case "1":
-                    addTask();
-
+                        String task = addTask();
+                        list.add(task);
                         break;
                     case "2":
                         System.out.println("Remove a task");
-                        choice = input.nextLine();
+
                         break;
                     case "3":
                         System.out.println("Update a task");
                         choice = input.nextLine();
                         break;
                     case "4":
-
+                        listTask(list);
                         break;
                 }
-            }
-            while ( Integer.parseInt(choice) > 0);
 
-            System.out.println("Exit");
+            }
+            System.out.println("Ending");
         }
-        static void addTask(){
+
+
+        static String addTask(){
             Scanner input = new Scanner(System.in);
             System.out.println("Add a task ");
             String choice = input.nextLine();
-
+            return choice;
 
         }
-        static void addList(){
+        static void listTask(ArrayList<String> a){
             System.out.println("List all tasks");
-            choice = input.nextLine();
+            System.out.println(a.toString());
 
         }
+
+        staiic void removeTask(){
+
+            
+
+    }
+
 
 
 
