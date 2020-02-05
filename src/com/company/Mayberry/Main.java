@@ -1,3 +1,5 @@
+//update
+
 package com.company.Mayberry;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -31,13 +33,17 @@ public class Main {
                         break;
                     case "2":
                         System.out.println("Remove a task");
+                        String list1 = removeTask();
+                        list.remove(list1);
 
                         break;
                     case "3":
-                        System.out.println("Update a task");
-                        choice = input.nextLine();
+                        int item = updateTask();
+                        String changedItem = input.nextLine();
+                        list.set(item, changedItem);
                         break;
                     case "4":
+                        System.out.println("list:");
                         listTask(list);
                         break;
                 }
@@ -60,12 +66,21 @@ public class Main {
 
         }
 
-        staiic void removeTask(){
 
-            
+        static String removeTask(){
+        System.out.println("Remove tasks");
+            Scanner input = new Scanner(System.in);
+            String choice = input.nextLine();
+            return choice;
 
     }
+        static int updateTask(){
+            System.out.println("Update tasks");
+            Scanner input = new Scanner(System.in);
+            int choice = input.nextInt();
+            return choice;
 
+        }
 
 
 
